@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yisheng"
+version = "0.1.0"
+description = "忆生 (Living Memory) — Phase 1: Experience Stream. A pure append-only raw-experience recorder."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.27",
+    "pydantic>=2.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "httpx>=0.27",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+filterwarnings = ["error::DeprecationWarning:yisheng.*"]
+markers = [
+    "api: HTTP 层保护与行为（PUT/DELETE→405、状态码映射）",
+    "repository: 仓储层约束（不暴露 update/delete、SQL 位置）",
+    "sqlite: SQLite 真实行为（AUTOINCREMENT 回滚、WAL、并发、synchronous）",
+    "integrity: 数据完整性检测（篡改内容后能否发现）",
+    "contract: 七条验收要求",
+    "static: 静态源码检查（补充证据，不替代运行时测试）",
+]

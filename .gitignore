@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# 数据库与运行时产物：不入库
+data/*.db
+data/*.db-wal
+data/*.db-shm
+logs/
+
+# 测试临时目录（本机沙箱产物，内容无意义）
+.pytest_tmp/
+.pytest_work/
+.tmp_pytest/
+test_tmp_x/
+
+# 规模测试与复测的临时产物
+.stresstmp/
+.audit_qwen/
+.audit_tmp/
+.audit_tmp_glm/
+.verifytmp/
+.acceptance/
+.pytest_q.txt
+.pytest_collect.txt
+.pytest_last_run.txt
+yisheng-phase1-github.zip

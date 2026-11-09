@@ -1,0 +1,8 @@
+# 忆生 Phase 1 运行时依赖
+fastapi>=0.110
+uvicorn>=0.27
+pydantic>=2.5
+
+# 开发 / 测试依赖
+# pytest>=8
+# httpx>=0.27
